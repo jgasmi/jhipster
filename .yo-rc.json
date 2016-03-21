@@ -1,0 +1,26 @@
+{
+  "generator-jhipster": {
+    "jhipsterVersion": "2.27.0",
+    "baseName": "jhipster",
+    "packageName": "com.mycompany.app",
+    "packageFolder": "com/mycompany/app",
+    "serverPort": "8080",
+    "authenticationType": "jwt",
+    "hibernateCache": "ehcache",
+    "clusteredHttpSession": "no",
+    "websocket": "spring-websocket",
+    "databaseType": "sql",
+    "devDatabaseType": "postgresql",
+    "prodDatabaseType": "postgresql",
+    "searchEngine": "no",
+    "buildTool": "maven",
+    "enableSocialSignIn": false,
+    "jwtSecretKey": "d4ba719b48bd0f42d35cd80d7c61848b144e6071",
+    "useSass": false,
+    "applicationType": "monolith",
+    "testFrameworks": [
+      "gatling"
+    ],
+    "enableTranslation": false
+  }
+}

@@ -1,0 +1,15 @@
+version: '2'
+services:
+    jhipster-app:
+        image: jhipster
+        external_links:
+            - jhipster-postgresql:postgresql
+        environment:
+            - SPRING_PROFILES_ACTIVE=prod
+            - SPRING_DATASOURCE_URL=jdbc:postgresql://postgresql:5432/jhipster
+        ports:
+            - 8080:8080
+    jhipster-postgresql:
+        extends:
+            file: postgresql.yml
+            service: jhipster-postgresql
