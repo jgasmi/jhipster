@@ -20,8 +20,8 @@ spring:
     datasource:
         url: jdbc:postgresql://localhost:5432/jhipster
         name:
-        username: jhipster
-        password:
+        username: postgres
+        password: postgres
     jpa:
         database-platform: com.mycompany.app.domain.util.FixedPostgreSQL82Dialect
         database: POSTGRESQL

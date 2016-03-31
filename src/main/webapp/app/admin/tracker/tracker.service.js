@@ -6,9 +6,9 @@
         .module('jhipsterApp')
         .factory('JhiTrackerService', JhiTrackerService);
 
-    JhiTrackerService.$inject = ['$rootScope', '$window', '$cookies', '$http', '$q', 'AuthServerProvider'];
+    JhiTrackerService.$inject = ['$rootScope', '$window', '$cookies', '$http', '$q', '$localStorage'];
 
-    function JhiTrackerService ($rootScope, $window, $cookies, $http, $q, AuthServerProvider) {
+    function JhiTrackerService ($rootScope, $window, $cookies, $http, $q, $localStorage) {
         var stompClient = null;
         var subscriber = null;
         var listener = $q.defer();
@@ -30,10 +30,9 @@
             //building absolute path so that websocket doesnt fail when deploying with a context path
             var loc = $window.location;
             var url = '//' + loc.host + loc.pathname + 'websocket/tracker';
-            var authToken = AuthServerProvider.getToken();
-            if(authToken){
-                url += '?access_token=' + authToken;
-            }
+            /*jshint camelcase: false */
+            var authToken = JSON.parse($localStorage.authenticationToken).access_token;
+            url += '?access_token=' + authToken;
             var socket = new SockJS(url);
             stompClient = Stomp.over(socket);
             var stateChangeStart;

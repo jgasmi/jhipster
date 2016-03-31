@@ -81,14 +81,12 @@
                 });
 
                 function addApiKeyAuthorization(){
-                
-                
-                
-                
-                    var authToken = JSON.parse(localStorage.getItem("jhi-authenticationToken") || sessionStorage.getItem("jhi-authenticationToken"));
+
+
+                    var authToken = JSON.parse(localStorage.getItem("jhi-authenticationToken")).access_token;
                     var apiKeyAuth = new SwaggerClient.ApiKeyAuthorization("Authorization", "Bearer " + authToken, "header");
-                    window.swaggerUi.api.clientAuthorizations.add("bearer", apiKeyAuth);
-                
+                    window.swaggerUi.api.clientAuthorizations.add("key", apiKeyAuth);
+
                 }
 
                 function getCSRF() {

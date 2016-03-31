@@ -52,10 +52,11 @@ jhipster:
         from: jhipster@localhost
     security:
         authentication:
-            jwt:
-                secret: d4ba719b48bd0f42d35cd80d7c61848b144e6071
-                # Token is valid 24 hours
-                tokenValidityInSeconds: 86400
+            oauth:
+                clientid: jhipsterapp
+                secret: mySecretOAuthSecret
+                # Token is valid 30 minutes
+                tokenValidityInSeconds: 1800
     swagger:
         title: jhipster API
         description: jhipster API documentation

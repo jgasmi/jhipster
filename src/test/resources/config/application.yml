@@ -59,8 +59,9 @@ jhipster:
         queueCapacity: 10000
     security:
         authentication:
-            jwt:
-                secret: jwt-secret-key
+            oauth:
+                clientid: jhipsterapp
+                secret: mySecretOAuthSecret
                 # Token is valid 30 minutes
                 tokenValidityInSeconds: 1800
     metrics: # DropWizard Metrics configuration, used by MetricsConfiguration
